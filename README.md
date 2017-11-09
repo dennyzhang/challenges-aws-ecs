@@ -27,6 +27,8 @@ Case study using AWS ECS to setup personal wordpress
 - TODO: Avoid host nginx.conf in git repo
 
 # System Architect
+- TODO: add architecture diagram
+
 ## Nginx proxy
 
 ```
