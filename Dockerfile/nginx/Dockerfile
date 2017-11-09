@@ -13,7 +13,8 @@
 # Base Docker image: https://hub.docker.com/_/nginx/
 
 FROM nginx
-ENV PORT 8081
+ENV HTTP_PORT 8081
+ENV HTTPS_PORT 8441
 
 LABEL maintainer "Denny<contact@dennyzhang.com>"
 
@@ -21,5 +22,8 @@ ADD default.conf /etc/nginx/conf.d/default.conf
 
 RUN apt-get -y update && apt-get install -y curl
 
+COPY ./docker-entrypoint.sh  /docker-entrypoint.sh
+ENTRYPOINT /docker-entrypoint.sh
+
 HEALTHCHECK --interval=5m --timeout=3s \
-            CMD curl -I http://localhost:$PORT | grep "HTTP/1.1 200 OK" || exit 1
+            CMD curl -I http://localhost:$HTT_PORT | grep "HTTP/1.1 200 OK" || exit 1
