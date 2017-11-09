@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash -ex
 if [ -z "$WORDPRESS_DIR" ]; then
     echo "ERROR: WORDPRESS_DIR env is not configured"
     exit 1
