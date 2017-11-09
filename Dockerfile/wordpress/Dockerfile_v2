@@ -13,11 +13,12 @@ FROM denny/aws-ecs-wordpress-study:wordpress_v1
 
 LABEL maintainer "Denny<contact@dennyzhang.com>"
 
-ARG WORDPRESS_DIR /var/www/blog
+ENV WORDPRESS_DIR /var/www/blog
 
 USER root
 
-RUN cd /tmp/ && wget -O latest.tar.gz https://wordpress.org/latest.tar.gz && \
+RUN apt-get install -y gzip tar wget && \
+    cd /tmp/ && wget -O latest.tar.gz https://wordpress.org/latest.tar.gz && \
     gzip -d latest.tar.gz && tar -xf latest.tar && \
     mkdir -p "$WORDPRESS_DIR" && cp -r wordpress/* "$WORDPRESS_DIR"/ && \
     rm -rf wordpress
