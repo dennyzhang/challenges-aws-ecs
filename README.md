@@ -25,6 +25,7 @@ Case study using AWS ECS to setup personal wordpress
 
 # Improvements
 - TODO: Avoid host nginx.conf in git repo
+- TODO: wordpress docker image: no need to check-in image
 
 # System Architect
 - TODO: add architecture diagram

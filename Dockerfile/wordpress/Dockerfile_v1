@@ -36,10 +36,3 @@ RUN \
    nginx -V 2>&1 | grep "1.13.3" && \
    php --version | grep "7.0.19" && \
    php-fpm7.0 --version | grep "7.0.19"
-
-ENTRYPOINT /docker-wordpress-entrypoint.sh
-
-WORKDIR /var/www/devops_blog
-
-HEALTHCHECK --interval=2m --timeout=3s \
-            CMD curl -I http://localhost:80 | grep "HTTP/2 200" || exit 1
