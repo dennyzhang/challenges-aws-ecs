@@ -7,4 +7,5 @@ install:
 # command to run tests
 script:
   # TODO: update test logic
+  echo "To be done"
   # - find . -name "*.py" | xargs pylint -E
