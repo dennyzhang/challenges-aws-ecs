@@ -1,0 +1,15 @@
+version: '2'
+services:
+  wordpress:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    hostname: wordpress
+    environment:
+      MY_DB_PASSWORD: "$MY_DB_PASSWORD"
+      MY_DB_HOST: "$MY_DB_HOST"
+    ports:
+      - "8080:80"
+      - "8443:443"
+    extra_hosts:
+      - "brain.dennyzhang.com:127.0.0.1"
