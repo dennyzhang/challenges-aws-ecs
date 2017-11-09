@@ -59,4 +59,5 @@ fi
 service php7.0-fpm start
 
 # tail -f /dev/null
+echo "nginx -g 'daemon off;'"
 nginx -g 'daemon off;'
