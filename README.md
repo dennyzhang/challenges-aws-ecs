@@ -30,6 +30,19 @@ Case study using AWS ECS to setup personal wordpress
 # System Architect
 - TODO: add architecture diagram
 
+End Users -> nginx
+```
+   80 -> http(8081)
+   443 -> https(8441)
+```
+
+nginx -> backend
+```
+   http://www.dennyzhang.com:8081 -> 8083
+   https://www.dennyzhang.com:8441 -> 8443
+   http://slack.dennyzhang.com:8081 -> 3000
+   http://www.dennyzhang.com:8081 -> 8083   
+```
 ## Nginx proxy
 
 ```
