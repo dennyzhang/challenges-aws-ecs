@@ -25,6 +25,11 @@ if [ -z "$MY_DB_USERNAME" ]; then
     exit 1
 fi
 
+if [ -z "$WEBSITE_NAME" ]; then
+    echo "ERROR: WEBSITE_NAME env is not configured"
+    exit 1
+fi
+
 cd "$WORDPRESS_DIR"
 
 if [ ! -f "wp-config.php" ]; then
@@ -38,6 +43,9 @@ sed -i "s/password_here/$MY_DB_PASSWORD/g" "wp-config.php"
 sed -i "s/localhost/$MY_DB_HOST/g" "wp-config.php"
 sed -i "s/database_name_here/$MY_DB_NAME/g" "wp-config.php"
 sed -i "s/username_here/$MY_DB_USERNAME/g" "wp-config.php"
+
+echo "Update /etc/nginx/conf.d/default.conf"
+sed -i "s/my_server_name_here/$WEBSITE_NAME/g" /etc/nginx/conf.d/default.conf
 
 # Fix for w3 total cache plugin issue
 if [ -d "wp-content/cache" ]; then

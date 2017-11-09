@@ -11,6 +11,7 @@ services:
       MY_DB_HOST: "$MY_DB_HOST"
       MY_DB_USERNAME: "$MY_DB_USERNAME"
       MY_DB_NAME: "$MY_DB_NAME"
+      WEBSITE_NAME: "$WEBSITE_NAME"
     ports:
       - "8080:80"
       - "8443:443"

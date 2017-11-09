@@ -17,6 +17,7 @@ FROM denny/aws-ecs-wordpress-study:wordpress_v2
 LABEL maintainer "Denny<contact@dennyzhang.com>"
 
 COPY ./docker-wordpress-entrypoint.sh $WORKDIR/docker-wordpress-entrypoint.sh
+COPY nginx_default.conf /etc/nginx/conf.d/default.conf
 
 HEALTHCHECK --interval=2m --timeout=3s \
             CMD curl -I http://localhost:80 | grep "HTTP/2 200" || exit 1
