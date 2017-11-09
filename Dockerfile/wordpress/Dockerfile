@@ -10,7 +10,7 @@
 ##      curl -I -L http://jenkins.dennyzhang.com:8081
 ##      curl -I -L http://slack.dennyzhang.com:8081
 ##################################################
-# Base Docker image: https://github.com/DennyZhang/aws-ecs-wordpress-study/blob/master/Dockerfile/wordpress/Dockerfile
+# Base Docker image: https://github.com/DennyZhang/aws-ecs-wordpress-study/blob/master/Dockerfile/wordpress/Dockerfile_v1
 
 FROM denny/aws-ecs-wordpress-study:wordpress_v1
 
