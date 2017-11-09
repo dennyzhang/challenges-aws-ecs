@@ -28,12 +28,18 @@ Case study using AWS ECS to setup personal wordpress
 
 # System Architect
 ## Nginx proxy
+
+```
 http://jenkins.dennyzhang.com:8081
 http://slack.dennyzhang.com:8081
 http://brain.dennyzhang.com:8081
+```
+
+```
 - TODO
 http://www.dennyzhang.com:8081
 https://www.dennyzhang.com:8081
+```
 
 # License
 - Code is licensed under [MIT License](https://www.dennyzhang.com/wp-content/mit_license.txt).
