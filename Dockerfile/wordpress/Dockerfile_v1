@@ -33,6 +33,6 @@ RUN \
 # verify image
 RUN \
    nginx -V && php --version && php-fpm7.0 --version && \
-   nginx -V 2>&1 | grep "1.13.3" && \
+   nginx -V 2>&1 | grep "1.13.6" && \
    php --version | grep "7.0.19" && \
    php-fpm7.0 --version | grep "7.0.19"
