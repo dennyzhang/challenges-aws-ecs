@@ -15,17 +15,36 @@ if [ -z "$MY_DB_HOST" ]; then
     exit 1
 fi
 
+if [ -z "$MY_DB_NAME" ]; then
+    echo "ERROR: MY_DB_NAME env is not configured"
+    exit 1
+fi
+
+if [ -z "$MY_DB_USERNAME" ]; then
+    echo "ERROR: MY_DB_USERNAME env is not configured"
+    exit 1
+fi
+
 cd "$WORDPRESS_DIR"
 
-sed -i "s/MY_DB_PASSWORD/$MY_DB_PASSWORD/g" "${WORDPRESS_DIR}/wp-config.php"
-sed -i "s/MY_DB_HOST/$MY_DB_HOST/g" "${WORDPRESS_DIR}/wp-config.php"
+if [ ! -f "wp-config.php" ]; then
+    echo "cp wp-config-sample.php wp-config.php"
+    cp wp-config-sample.php wp-config.php
+fi
+
+echo "Update wp-config.php"
+# TODO: better way
+sed -i "s/password_here/$MY_DB_PASSWORD/g" "wp-config.php"
+sed -i "s/localhost/$MY_DB_HOST/g" "wp-config.php"
+sed -i "s/database_name_here/$MY_DB_NAME/g" "wp-config.php"
+sed -i "s/username_here/$MY_DB_USERNAME/g" "wp-config.php"
 
 # Fix for w3 total cache plugin issue
-if [ -d "${WORDPRESS_DIR}/wp-content/cache" ]; then
-    chmod 777 -R "${WORDPRESS_DIR}/wp-content/cache"
+if [ -d "wp-content/cache" ]; then
+    chmod 777 -R "wp-content/cache"
 fi
-if [ -d "${WORDPRESS_DIR}/wp-content/w3tc-config" ]; then
-    chmod 777 -R "${WORDPRESS_DIR}/wp-content/w3tc-config"
+if [ -d "wp-content/w3tc-config" ]; then
+    chmod 777 -R "wp-content/w3tc-config"
 fi
 
 # TODO: make it foreground

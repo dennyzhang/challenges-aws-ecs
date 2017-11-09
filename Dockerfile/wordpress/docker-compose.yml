@@ -5,9 +5,12 @@ services:
       context: .
       dockerfile: Dockerfile
     hostname: wordpress
+    entrypoint: ["tail", "-f", "/dev/null"]
     environment:
       MY_DB_PASSWORD: "$MY_DB_PASSWORD"
       MY_DB_HOST: "$MY_DB_HOST"
+      MY_DB_USERNAME: "$MY_DB_USERNAME"
+      MY_DB_NAME: "$MY_DB_NAME"
     ports:
       - "8080:80"
       - "8443:443"
