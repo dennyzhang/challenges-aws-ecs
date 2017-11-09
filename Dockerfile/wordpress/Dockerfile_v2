@@ -23,6 +23,8 @@ RUN apt-get install -y gzip tar wget && \
     mkdir -p "$WORDPRESS_DIR" && cp -r wordpress/* "$WORDPRESS_DIR"/ && \
     rm -rf wordpress
 
+COPY ./docker-wordpress-entrypoint.sh $WORKDIR/docker-wordpress-entrypoint.sh
+
 ENTRYPOINT /docker-wordpress-entrypoint.sh
 
 WORKDIR $WORDPRESS_DIR
