@@ -19,5 +19,7 @@ LABEL maintainer "Denny<contact@dennyzhang.com>"
 
 ADD default.conf /etc/nginx/conf.d/default.conf
 
+RUN apt-get -y update && apt-get install -y curl
+
 HEALTHCHECK --interval=5m --timeout=3s \
             CMD curl -I http://localhost:$PORT | grep "HTTP/1.1 200 OK" || exit 1
