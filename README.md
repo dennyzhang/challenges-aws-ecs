@@ -44,6 +44,10 @@ http://www.dennyzhang.com:8081
 https://www.dennyzhang.com:8081
 ```
 
+# TODO:
+- TODO: avoid manually add xmlrpc_denny.php
+- TODO: add nginx proxy server
+
 # License
 - Code is licensed under [MIT License](https://www.dennyzhang.com/wp-content/mit_license.txt).
 
