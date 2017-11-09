@@ -17,7 +17,7 @@ FROM denny/aws-ecs-wordpress-study:wordpress_v2
 LABEL maintainer "Denny<contact@dennyzhang.com>"
 
 # TODO: avoid adding xmlrpc_denny.php
-COPY xmlrpc_denny.php $WORKDIR/xmlrpc_denny.php
+COPY xmlrpc_denny.php $WORDPRESS_DIR/xmlrpc_denny.php
 
 COPY nginx_default.conf /etc/nginx/conf.d/default.conf
 
