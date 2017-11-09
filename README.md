@@ -11,6 +11,8 @@ Case study using AWS ECS to setup personal wordpress
 
 Live Demo: https://www.dennyzhang.com
 
+![](images/aws_ecs_wordpress.png)
+
 # Requirements
 Case study using AWS ECS to setup personal wordpress
 
