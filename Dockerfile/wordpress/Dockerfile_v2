@@ -1,0 +1,29 @@
+########## How To Use Docker Image ###############
+##
+##  Image Name: denny/aws-ecs-wordpress-study:latest
+##  Git link: https://github.com/DennyZhang/aws-ecs-wordpress-study/blob/master/Dockerfile/wordpress/Dockerfile
+##  Build docker image:
+##      time docker build --no-cache -f Dockerfile_v2 -t denny/aws-ecs-wordpress-study:wordpress_v2 --rm=true .
+##  Test image:
+##      docker run -p 8081:8081 --name wordpress-test -d denny/aws-ecs-wordpress-study:wordpress_v2
+##################################################
+# Base Docker image: https://github.com/DennyZhang/aws-ecs-wordpress-study/blob/master/Dockerfile/wordpress/Dockerfile_v1
+
+FROM denny/aws-ecs-wordpress-study:wordpress_v1
+
+LABEL maintainer "Denny<contact@dennyzhang.com>"
+
+ARG WORDPRESS_DIR /var/www/blog
+
+USER root
+
+RUN cd /tmp/ && wget -O latest.tar.gz https://wordpress.org/latest.tar.gz && \
+    gzip -d latest.tar.gz && tar -xf latest.tar && \
+    mkdir -p "$WORDPRESS_DIR" && cp -r wordpress/* "$WORDPRESS_DIR"/ && \
+    rm -rf wordpress
+
+COPY ./docker-wordpress-entrypoint.sh /docker-wordpress-entrypoint.sh
+
+ENTRYPOINT /docker-wordpress-entrypoint.sh
+
+WORKDIR $WORDPRESS_DIR

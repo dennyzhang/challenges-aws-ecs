@@ -18,8 +18,6 @@ LABEL maintainer "Denny<contact@dennyzhang.com>"
 
 USER root
 
-COPY ./docker-wordpress-entrypoint.sh /docker-wordpress-entrypoint.sh
-
 RUN \
    apt-get -y update && apt-get install -y curl && \
    apt-get install -y iputils-ping && \

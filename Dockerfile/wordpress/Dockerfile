@@ -10,21 +10,11 @@
 ##      curl -I -L http://jenkins.dennyzhang.com:8081
 ##      curl -I -L http://slack.dennyzhang.com:8081
 ##################################################
-# Base Docker image: https://github.com/DennyZhang/aws-ecs-wordpress-study/blob/master/Dockerfile/wordpress/Dockerfile_v1
+# Base Docker image: https://github.com/DennyZhang/aws-ecs-wordpress-study/blob/master/Dockerfile/wordpress/Dockerfile_v2
 
-FROM denny/aws-ecs-wordpress-study:wordpress_v1
+FROM denny/aws-ecs-wordpress-study:wordpress_v2
 
 LABEL maintainer "Denny<contact@dennyzhang.com>"
-
-ARG WORDPRESS_DIR /var/www/blog
-
-USER root
-
-WORKDIR $WORDPRESS_DIR
-
-CMD ["bash", "/docker-wordpress-entrypoint.sh" $WORDPRESS_DIR ]
-
-ENTRYPOINT /docker-wordpress-entrypoint.sh
 
 HEALTHCHECK --interval=2m --timeout=3s \
             CMD curl -I http://localhost:80 | grep "HTTP/2 200" || exit 1
