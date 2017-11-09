@@ -1,0 +1,45 @@
+########## How To Use Docker Image ###############
+##
+##  Image Name: denny/aws-ecs-wordpress-study:latest
+##  Git link: https://github.com/DennyZhang/aws-ecs-wordpress-study/blob/master/Dockerfile/wordpress/Dockerfile_v1
+##  Build docker image:
+##      time docker build --no-cache -f Dockerfile_v1 -t denny/aws-ecs-wordpress-study:wordpress_v1 --rm=true .
+##  Test image:
+##      docker run -p 8081:8081 --name wordpress-test -d denny/aws-ecs-wordpress-study:wordpress_v1
+##      # bind /etc/hosts for jenkins.dennyzhang.com and slack.dennyzhang.com
+##      curl -I -L http://jenkins.dennyzhang.com:8081
+##      curl -I -L http://slack.dennyzhang.com:8081
+##################################################
+# Base Docker image: https://hub.docker.com/r/library/nginx/
+
+FROM nginx:latest
+
+LABEL maintainer "Denny<contact@dennyzhang.com>"
+
+USER root
+
+COPY ./docker-wordpress-entrypoint.sh /docker-wordpress-entrypoint.sh
+
+RUN \
+   apt-get -y update && apt-get install -y curl && \
+   apt-get install -y iputils-ping && \
+   # https://www.linode.com/docs/web-servers/nginx/install-and-configure-nginx-and-php-fastcgi-on-ubuntu-16-04
+   apt-get install -y php7.0-cli php7.0-cgi php7.0-fpm && \
+   apt-get install -y php7.0-mysql && \
+   # https://serverfault.com/questions/824336/wordpress-nginx-php-fpm-xml-rpc-not-working
+   apt-get install -y php-xml php-xmlrpc && \
+   curl -o /root/certbot-auto https://dl.eff.org/certbot-auto && chmod a+x /root/certbot-auto && \
+   apt-get install -y vim && \
+   # https://serverfault.com/questions/777994/permission-denied-for-fastcgi-pass-using-php7
+   usermod -a -G www-data nginx && \
+   # verify image
+   nginx -V 2>&1 | grep "1.13.3" && \
+   php --version | grep "7.0.19" && \
+   php-fpm7.0 --version | grep "7.0.19"
+
+ENTRYPOINT /docker-wordpress-entrypoint.sh
+
+WORKDIR /var/www/devops_blog
+
+HEALTHCHECK --interval=2m --timeout=3s \
+            CMD curl -I http://localhost:80 | grep "HTTP/2 200" || exit 1
