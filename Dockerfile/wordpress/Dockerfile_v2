@@ -5,7 +5,7 @@
 ##  Build docker image:
 ##      time docker build --no-cache -f Dockerfile_v2 -t denny/aws-ecs-wordpress-study:wordpress_v2 --rm=true .
 ##  Test image:
-##      docker run -p 8081:8081 --name wordpress-test -d denny/aws-ecs-wordpress-study:wordpress_v2
+##      docker run -p 8080:80 --name wordpress-test -d denny/aws-ecs-wordpress-study:wordpress_v2
 ##################################################
 # Base Docker image: https://github.com/DennyZhang/aws-ecs-wordpress-study/blob/master/Dockerfile/wordpress/Dockerfile_v1
 
