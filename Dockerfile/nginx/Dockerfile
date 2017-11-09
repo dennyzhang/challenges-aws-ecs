@@ -13,10 +13,11 @@
 # Base Docker image: https://hub.docker.com/_/nginx/
 
 FROM nginx
+ENV PORT 8081
 
 LABEL maintainer "Denny<contact@dennyzhang.com>"
 
 ADD default.conf /etc/nginx/conf.d/default.conf
 
 HEALTHCHECK --interval=5m --timeout=3s \
-            CMD curl -I http://localhost:8081 | grep "HTTP/1.1 200 OK" || exit 1
+            CMD curl -I http://localhost:$PORT | grep "HTTP/1.1 200 OK" || exit 1
