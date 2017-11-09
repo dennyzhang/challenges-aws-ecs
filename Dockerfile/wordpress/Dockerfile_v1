@@ -27,10 +27,12 @@ RUN \
    # https://serverfault.com/questions/824336/wordpress-nginx-php-fpm-xml-rpc-not-working
    apt-get install -y php-xml php-xmlrpc && \
    curl -o /root/certbot-auto https://dl.eff.org/certbot-auto && chmod a+x /root/certbot-auto && \
-   apt-get install -y vim && \
    # https://serverfault.com/questions/777994/permission-denied-for-fastcgi-pass-using-php7
-   usermod -a -G www-data nginx && \
-   # verify image
+   usermod -a -G www-data nginx
+
+# verify image
+RUN \
+   nginx -V && php --version && php-fpm7.0 --version && \
    nginx -V 2>&1 | grep "1.13.3" && \
    php --version | grep "7.0.19" && \
    php-fpm7.0 --version | grep "7.0.19"
