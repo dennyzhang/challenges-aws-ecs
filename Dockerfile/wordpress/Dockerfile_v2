@@ -24,6 +24,7 @@ RUN apt-get install -y gzip tar wget && \
     rm -rf wordpress
 
 COPY ./docker-wordpress-entrypoint.sh $WORDPRESS_DIR/docker-wordpress-entrypoint.sh
+COPY ./wp-config.php $WORDPRESS_DIR/wp-config.php
 
 ENTRYPOINT $WORDPRESS_DIR/docker-wordpress-entrypoint.sh
 

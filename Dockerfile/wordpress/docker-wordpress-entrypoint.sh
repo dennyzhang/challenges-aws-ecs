@@ -30,6 +30,21 @@ if [ -z "$WEBSITE_NAME" ]; then
     exit 1
 fi
 
+if [ -z "$WEB_PORT" ]; then
+    echo "ERROR: WEB_PORT env is not configured"
+    exit 1
+fi
+
+if [ -z "$WP_HOMEURL" ]; then
+    echo "ERROR: WP_HOMEURL env is not configured"
+    exit 1
+fi
+
+if [ -z "$WP_SITEURL" ]; then
+    echo "ERROR: WP_SITEURL env is not configured"
+    exit 1
+fi
+
 cd "$WORDPRESS_DIR"
 
 if [ ! -f "wp-config.php" ]; then
@@ -43,9 +58,12 @@ sed -i "s/password_here/$MY_DB_PASSWORD/g" "wp-config.php"
 sed -i "s/localhost/$MY_DB_HOST/g" "wp-config.php"
 sed -i "s/database_name_here/$MY_DB_NAME/g" "wp-config.php"
 sed -i "s/username_here/$MY_DB_USERNAME/g" "wp-config.php"
+sed -i "s/wp_homeurl_here/$WP_HOMEURL/g" "wp-config.php"
+sed -i "s/wp_siteurl_here/$WP_SITEURL/g" "wp-config.php"
 
 echo "Update /etc/nginx/conf.d/default.conf"
 sed -i "s/my_server_name_here/$WEBSITE_NAME/g" /etc/nginx/conf.d/default.conf
+sed -i "s/web_port_here/$WEB_PORT/g" /etc/nginx/conf.d/default.conf
 
 # Fix for w3 total cache plugin issue
 if [ -d "wp-content/cache" ]; then
