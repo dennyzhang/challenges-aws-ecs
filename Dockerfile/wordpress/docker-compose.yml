@@ -3,7 +3,7 @@ services:
   wordpress:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile_v2
     hostname: wordpress
     entrypoint: ["tail", "-f", "/dev/null"]
     environment:
