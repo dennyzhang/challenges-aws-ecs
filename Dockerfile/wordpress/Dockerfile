@@ -16,5 +16,8 @@ FROM denny/aws-ecs-wordpress-study:wordpress_v2
 
 LABEL maintainer "Denny<contact@dennyzhang.com>"
 
+# TODO: remove this, once v2 has been rebuilt
+COPY ./docker-entrypoint.sh $WORDPRESS_DIR/docker-entrypoint.sh
+
 # TODO: avoid adding xmlrpc_denny.php
 COPY xmlrpc_denny.php $WORDPRESS_DIR/xmlrpc_denny.php
