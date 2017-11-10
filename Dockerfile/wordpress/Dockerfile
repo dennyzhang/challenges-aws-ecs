@@ -16,10 +16,12 @@ FROM denny/aws-ecs-wordpress-study:wordpress_v2
 
 LABEL maintainer "Denny<contact@dennyzhang.com>"
 
+ENV WEB_PORT 80
+
 # TODO: avoid adding xmlrpc_denny.php
 COPY xmlrpc_denny.php $WORDPRESS_DIR/xmlrpc_denny.php
 
 COPY nginx_default.conf /etc/nginx/conf.d/default.conf
 
 HEALTHCHECK --interval=2m --timeout=3s \
-            CMD curl -I http://localhost:80 | grep "HTTP/1.1 301 Moved Permanently" || exit 1
+            CMD curl -I http://localhost:$WEB_PORT | grep "HTTP/1.1 200 OK" || exit 1
