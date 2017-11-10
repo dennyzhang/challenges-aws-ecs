@@ -23,7 +23,9 @@ ADD default.conf /etc/nginx/conf.d/default.conf
 RUN apt-get -y update && apt-get install -y curl
 
 COPY ./docker-entrypoint.sh  /docker-entrypoint.sh
+COPY ./docker-healthcheck.sh  /docker-healthcheck.sh
+
 ENTRYPOINT /docker-entrypoint.sh
 
 HEALTHCHECK --interval=5m --timeout=3s \
-            CMD curl -I http://localhost:$HTT_PORT | grep "HTTP/1.1 200 OK" || exit 1
+            CMD /docker-healthcheck.sh || exit 1
