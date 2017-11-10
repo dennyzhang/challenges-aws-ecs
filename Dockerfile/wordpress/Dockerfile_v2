@@ -15,6 +15,8 @@ LABEL maintainer "Denny<contact@dennyzhang.com>"
 
 ENV WORDPRESS_DIR /var/www/blog
 
+ENV WEB_PORT 80
+
 USER root
 
 RUN apt-get install -y gzip tar wget && \
@@ -23,9 +25,15 @@ RUN apt-get install -y gzip tar wget && \
     mkdir -p "$WORDPRESS_DIR" && cp -r wordpress/* "$WORDPRESS_DIR"/ && \
     rm -rf wordpress
 
-COPY ./docker-wordpress-entrypoint.sh $WORDPRESS_DIR/docker-wordpress-entrypoint.sh
+WORKDIR $WORDPRESS_DIR
+
+COPY ./docker-entrypoint.sh $WORDPRESS_DIR/docker-entrypoint.sh
+COPY ./docker-healthcheck.sh $WORDPRESS_DIR/docker-healthcheck.sh
 COPY ./wp-config.php $WORDPRESS_DIR/wp-config.php
 
-ENTRYPOINT $WORDPRESS_DIR/docker-wordpress-entrypoint.sh
+COPY nginx_default.conf /etc/nginx/conf.d/default.conf
 
-WORKDIR $WORDPRESS_DIR
+ENTRYPOINT $WORDPRESS_DIR/docker-entrypoint.sh
+
+HEALTHCHECK --interval=2m --timeout=3s \
+            CMD $WORDPRESS_DIR/docker-healthcheck.sh || exit 1
