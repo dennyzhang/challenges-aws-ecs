@@ -66,7 +66,7 @@ https://www.dennyzhang.com:8081
 
 # Use commands
 ```
-docker pull denny/aws-ecs-wordpress-study:wordpress && \
+docker pull denny/aws-ecs-wordpress-study:wordpress_v2 && \
 docker pull denny/aws-ecs-wordpress-study:nginx && \
 docker pull denny/devops-blog:latest
 docker pull denny/devops-blog:nginx-proxy

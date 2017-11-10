@@ -23,7 +23,8 @@ RUN apt-get install -y gzip tar wget && \
     cd /tmp/ && wget -O latest.tar.gz https://wordpress.org/latest.tar.gz && \
     gzip -d latest.tar.gz && tar -xf latest.tar && \
     mkdir -p "$WORDPRESS_DIR" && cp -r wordpress/* "$WORDPRESS_DIR"/ && \
-    rm -rf wordpress
+    rm -rf wordpress && \
+    apt-get install -y vim
 
 WORKDIR $WORDPRESS_DIR
 
