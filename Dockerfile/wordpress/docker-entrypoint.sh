@@ -35,8 +35,8 @@ if [ -z "$WEB_PORT" ]; then
     exit 1
 fi
 
-if [ -z "$WP_HOMEURL" ]; then
-    echo "ERROR: WP_HOMEURL env is not configured"
+if [ -z "$WP_HOME" ]; then
+    echo "ERROR: WP_HOME env is not configured"
     exit 1
 fi
 
@@ -58,8 +58,8 @@ sed -i "s/password_here/$MY_DB_PASSWORD/g" "wp-config.php"
 sed -i "s/localhost/$MY_DB_HOST/g" "wp-config.php"
 sed -i "s/database_name_here/$MY_DB_NAME/g" "wp-config.php"
 sed -i "s/username_here/$MY_DB_USERNAME/g" "wp-config.php"
-WP_HOMEURL=$(echo $WP_HOMEURL | sed "s|/|\\\/|g") 
-sed -i "s/wp_homeurl_here/$WP_HOMEURL/g" "wp-config.php"
+WP_HOME=$(echo $WP_HOME | sed "s|/|\\\/|g") 
+sed -i "s/wp_homeurl_here/$WP_HOME/g" "wp-config.php"
 WP_SITEURL=$(echo $WP_SITEURL | sed "s|/|\\\/|g") 
 sed -i "s/wp_siteurl_here/$WP_SITEURL/g" "wp-config.php"
 

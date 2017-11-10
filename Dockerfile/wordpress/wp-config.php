@@ -37,7 +37,7 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
-define('WP_HOMEURL', 'wp_homeurl_here');
+define('WP_HOME', 'wp_homeurl_here');
 define('WP_SITEURL', 'wp_siteurl_here');
 
 /**#@+
