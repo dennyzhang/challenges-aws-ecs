@@ -34,7 +34,7 @@ COPY ./wp-config.php $WORDPRESS_DIR/wp-config.php
 COPY nginx_default.conf /etc/nginx/conf.d/default.conf
 
 # Install wordpress plugins
-ADD disable_canonical_redirection wp-content/plugins/disable_canonical_redirection
+ADD disable-canonical-redirection wp-content/plugins/disable-canonical-redirection
 
 ENTRYPOINT $WORDPRESS_DIR/docker-entrypoint.sh
 
