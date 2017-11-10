@@ -64,6 +64,13 @@ https://www.dennyzhang.com:8081
 - TODO: avoid manually add xmlrpc_denny.php
 - TODO: add nginx proxy server
 
+# Use commands
+```
+docker pull denny/aws-ecs-wordpress-study:wordpress && \
+docker pull denny/aws-ecs-wordpress-study:nginx && \
+docker pull denny/devops-blog:latest
+```
+
 # License
 - Code is licensed under [MIT License](https://www.dennyzhang.com/wp-content/mit_license.txt).
 
