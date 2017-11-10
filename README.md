@@ -69,6 +69,7 @@ https://www.dennyzhang.com:8081
 docker pull denny/aws-ecs-wordpress-study:wordpress && \
 docker pull denny/aws-ecs-wordpress-study:nginx && \
 docker pull denny/devops-blog:latest
+docker pull denny/devops-blog:nginx-proxy
 ```
 
 # License
