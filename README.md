@@ -11,27 +11,18 @@ Case study using AWS ECS to setup personal wordpress
 
 Live Demo: https://www.dennyzhang.com
 
-![](images/aws_ecs_wordpress.png)
-![](images/aws_ecs.png)
-
 # Requirements
 Case study using AWS ECS to setup personal wordpress
-
-# Task Breakdown
-- TODO
-
+- [Optional] Fully HA
 - [Optional] Security Hardening
 - [Optional] Monitoring/Alerting
 
-# Highlights
-- Principle: 1. Fully automated. 2. Improve availability
+![](images/aws_ecs_wordpress.png)
+![](images/aws_ecs.png)
 
-# Improvements
+# Improvements Opportunities
 - TODO: Avoid host nginx.conf in git repo
 - TODO: wordpress docker image: no need to check-in image
-
-# System Architect
-- TODO: add architecture diagram
 
 End Users -> nginx
 ```
