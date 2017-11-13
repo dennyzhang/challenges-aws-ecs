@@ -11,7 +11,7 @@
 
 FROM denny/aws-ecs-wordpress-study:wordpress_v1
 
-LABEL maintainer "Denny<contact@dennyzhang.com>"
+LABEL maintainer "Denny<https://www.dennyzhang.com/contact>"
 
 ENV WORDPRESS_DIR /var/www/blog
 

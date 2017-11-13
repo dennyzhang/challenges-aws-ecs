@@ -16,7 +16,7 @@ FROM nginx
 ENV HTTP_PORT 8081
 ENV HTTPS_PORT 8441
 
-LABEL maintainer "Denny<contact@dennyzhang.com>"
+LABEL maintainer "Denny<https://www.dennyzhang.com/contact>"
 
 ADD default.conf /etc/nginx/conf.d/default.conf
 

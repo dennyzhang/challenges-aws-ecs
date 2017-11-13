@@ -1,4 +1,17 @@
-#!/bin/bash -ex
+#!/usr/bin/env bash
+##-------------------------------------------------------------------
+## @copyright 2017 DennyZhang.com
+## Licensed under MIT 
+##   https://www.dennyzhang.com/wp-content/mit_license.txt
+##
+## File: docker-entrypoint.sh
+## Author : Denny <https://www.dennyzhang.com/contact>
+## Description :
+## --
+## Created : <2017-11-13>
+## Updated: Time-stamp: <2017-11-13 11:20:34>
+##-------------------------------------------------------------------
+set -ex
 if [ -z "$WORDPRESS_DIR" ]; then
     echo "ERROR: WORDPRESS_DIR env is not configured"
     exit 1
@@ -81,3 +94,4 @@ service php7.0-fpm start
 # tail -f /dev/null
 echo "nginx -g 'daemon off;'"
 nginx -g 'daemon off;'
+## File: docker-entrypoint ends

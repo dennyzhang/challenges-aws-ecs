@@ -14,7 +14,7 @@
 
 FROM nginx:latest
 
-LABEL maintainer "Denny<contact@dennyzhang.com>"
+LABEL maintainer "Denny<https://www.dennyzhang.com/contact>"
 
 USER root
 
