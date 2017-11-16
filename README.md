@@ -13,9 +13,9 @@ Live Demo: https://www.dennyzhang.com
 
 # Requirements
 Case study using AWS ECS to setup personal wordpress
-- Make the blog as available as you can
-- Make the blog loads as fast as you can
-- Mininum the cost as low as you can
+1. Make the blog as available as you can
+2. Make the blog loads as fast as you can
+3. Mininum the cost as low as you can
 
 ![](images/aws_ecs_wordpress.png)
 ![](images/aws_ecs.png)
