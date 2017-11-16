@@ -13,9 +13,9 @@ Live Demo: https://www.dennyzhang.com
 
 # Requirements
 Case study using AWS ECS to setup personal wordpress
-- [Optional] Fully HA
-- [Optional] Security Hardening
-- [Optional] Monitoring/Alerting
+- Make the blog as available as you can
+- Make the blog loads as fast as you can
+- Mininum the cost as low as you can
 
 ![](images/aws_ecs_wordpress.png)
 ![](images/aws_ecs.png)
