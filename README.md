@@ -15,7 +15,7 @@ Live Demo: https://www.dennyzhang.com
 Case study using AWS ECS to setup personal wordpress
 1. Make the blog as available as you can
 2. Make the blog loads as fast as you can
-3. Mininum the cost as low as you can
+3. Make the blog cost as low as you can
 
 ![](images/aws_ecs_wordpress.png)
 ![](images/aws_ecs.png)
@@ -63,7 +63,7 @@ docker pull denny/devops-blog:latest
 docker pull denny/devops-blog:nginx-proxy
 ```
 
-<img align="right" width="200" height="183" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/magic.gif">
+<a href="https://www.dennyzhang.com"><img align="right" width="200" height="183" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/magic.gif"></a>
 
 # License
 - Code is licensed under [MIT License](https://www.dennyzhang.com/wp-content/mit_license.txt).
