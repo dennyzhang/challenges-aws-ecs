@@ -17,8 +17,8 @@ Case study using AWS ECS to setup personal wordpress
 2. Make the blog loads as fast as you can
 3. Make the blog cost as low as you can
 
-![](images/aws_ecs_wordpress.png)
-![](images/aws_ecs.png)
+<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/aws-ecs-wordpress-study/master/images/aws_ecs_wordpress.png"/> </a>
+<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/aws-ecs-wordpress-study/master/images/aws_ecs.png"/> </a>
 
 # Improvements Opportunities
 - TODO: Avoid host nginx.conf in git repo
