@@ -9,10 +9,10 @@
 ## Description :
 ## --
 ## Created : <2017-11-13>
-## Updated: Time-stamp: <2017-11-13 11:20:03>
+## Updated: Time-stamp: <2017-11-25 14:07:56>
 ##-------------------------------------------------------------------
 set -ex
-curl -I http://localhost:$HTTP_PORT | grep "HTTP/1.1 200 OK"
+# curl -I http://localhost:$HTTP_PORT | grep "HTTP/1.1 200 OK"
 
 echo "Update /etc/nginx/conf.d/default.conf"
 sed -i "s/http_port_here/$HTTP_PORT/g" /etc/nginx/conf.d/default.conf
