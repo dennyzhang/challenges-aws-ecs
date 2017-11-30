@@ -1,11 +1,11 @@
-# aws-ecs-wordpress-study
+# challenges-aws-ecs
 <a href="https://github.com/DennyZhang?tab=followers"><img align="right" width="200" height="183" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/fork_github.png" /></a>
 
-[![Build Status](https://travis-ci.org/DennyZhang/aws-ecs-wordpress-study.svg?branch=master)](https://travis-ci.org/DennyZhang/aws-ecs-wordpress-study) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+[![Build Status](https://travis-ci.org/DennyZhang/challenges-aws-ecs.svg?branch=master)](https://travis-ci.org/DennyZhang/challenges-aws-ecs) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 [![LinkedIn](https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/linkedin.png)](https://www.linkedin.com/in/dennyzhang001) <a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="http://slack.dennyzhang.com/badge.svg" alt="slack"/></a> [![Github](https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/github.png)](https://github.com/DennyZhang)
 
-File me [tickets](https://github.com/DennyZhang/aws-ecs-wordpress-study/issues) or star [the repo](https://github.com/DennyZhang/aws-ecs-wordpress-study).
+File me [tickets](https://github.com/DennyZhang/challenges-aws-ecs/issues) or star [the repo](https://github.com/DennyZhang/challenges-aws-ecs).
 
 Case study using AWS ECS to setup personal wordpress
 
@@ -17,8 +17,8 @@ Case study using AWS ECS to setup personal wordpress
 2. Make the blog loads as fast as you can
 3. Make the blog cost as low as you can
 
-<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/aws-ecs-wordpress-study/master/images/aws_ecs_wordpress.png"/> </a>
-<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/aws-ecs-wordpress-study/master/images/aws_ecs.png"/> </a>
+<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-aws-ecs/master/images/aws_ecs_wordpress.png"/> </a>
+<a href="https://www.dennyzhang.com"><img src="https://raw.githubusercontent.com/DennyZhang/challenges-aws-ecs/master/images/aws_ecs.png"/> </a>
 
 # Improvements Opportunities
 - TODO: Avoid host nginx.conf in git repo
@@ -57,8 +57,8 @@ https://www.dennyzhang.com:8081
 
 # Use commands
 ```
-docker pull denny/aws-ecs-wordpress-study:wordpress_v2 && \
-docker pull denny/aws-ecs-wordpress-study:nginx && \
+docker pull denny/challenges-aws-ecs:wordpress_v2 && \
+docker pull denny/challenges-aws-ecs:nginx && \
 docker pull denny/devops-blog:latest
 docker pull denny/devops-blog:nginx-proxy
 ```

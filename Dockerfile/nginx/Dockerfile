@@ -1,11 +1,11 @@
 ########## How To Use Docker Image ###############
 ##
-##  Image Name: denny/aws-ecs-wordpress-study:latest
-##  Git link: https://github.com/DennyZhang/aws-ecs-wordpress-study/blob/master/Dockerfile/nginx/Dockerfile
+##  Image Name: denny/challenges-aws-ecs:latest
+##  Git link: https://github.com/DennyZhang/challenges-aws-ecs/blob/master/Dockerfile/nginx/Dockerfile
 ##  Build docker image:
-##      time docker build --no-cache -f Dockerfile -t denny/aws-ecs-wordpress-study:nginx --rm=true .
+##      time docker build --no-cache -f Dockerfile -t denny/challenges-aws-ecs:nginx --rm=true .
 ##  Test image:
-##      docker run -p 8081:8081 --name nginx-test -d denny/aws-ecs-wordpress-study:nginx
+##      docker run -p 8081:8081 --name nginx-test -d denny/challenges-aws-ecs:nginx
 ##      # bind /etc/hosts for jenkins.dennyzhang.com and slack.dennyzhang.com
 ##      curl -I -L http://jenkins.dennyzhang.com:8081
 ##      curl -I -L http://slack.dennyzhang.com:8081

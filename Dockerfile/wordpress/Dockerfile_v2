@@ -1,15 +1,15 @@
 ########## How To Use Docker Image ###############
 ##
-##  Image Name: denny/aws-ecs-wordpress-study:latest
-##  Git link: https://github.com/DennyZhang/aws-ecs-wordpress-study/blob/master/Dockerfile/wordpress/Dockerfile
+##  Image Name: denny/challenges-aws-ecs:latest
+##  Git link: https://github.com/DennyZhang/challenges-aws-ecs/blob/master/Dockerfile/wordpress/Dockerfile
 ##  Build docker image:
-##      time docker build --no-cache -f Dockerfile_v2 -t denny/aws-ecs-wordpress-study:wordpress_v2 --rm=true .
+##      time docker build --no-cache -f Dockerfile_v2 -t denny/challenges-aws-ecs:wordpress_v2 --rm=true .
 ##  Test image:
-##      docker run -p 8080:80 --name wordpress-test -d denny/aws-ecs-wordpress-study:wordpress_v2
+##      docker run -p 8080:80 --name wordpress-test -d denny/challenges-aws-ecs:wordpress_v2
 ##################################################
-# Base Docker image: https://github.com/DennyZhang/aws-ecs-wordpress-study/blob/master/Dockerfile/wordpress/Dockerfile_v1
+# Base Docker image: https://github.com/DennyZhang/challenges-aws-ecs/blob/master/Dockerfile/wordpress/Dockerfile_v1
 
-FROM denny/aws-ecs-wordpress-study:wordpress_v1
+FROM denny/challenges-aws-ecs:wordpress_v1
 
 LABEL maintainer "Denny<https://www.dennyzhang.com/contact>"
 
