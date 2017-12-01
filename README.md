@@ -7,6 +7,8 @@
 
 File me [tickets](https://github.com/DennyZhang/challenges-aws-ecs/issues) or star [the repo](https://github.com/DennyZhang/challenges-aws-ecs).
 
+**Similar Challenges**: https://www.dennyzhang.com/battle
+
 Case study using AWS ECS to setup personal wordpress
 
 Live Demo: https://www.dennyzhang.com
@@ -51,6 +53,8 @@ http://www.dennyzhang.com:8081
 https://www.dennyzhang.com:8081
 ```
 
+<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+
 # TODO:
 - TODO: avoid manually add xmlrpc_denny.php
 - TODO: add nginx proxy server
@@ -63,7 +67,7 @@ docker pull denny/devops-blog:latest
 docker pull denny/devops-blog:nginx-proxy
 ```
 
-<a href="https://www.dennyzhang.com"><img align="right" width="200" height="183" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/magic.gif"></a>
-
 # License
 - Code is licensed under [MIT License](https://www.dennyzhang.com/wp-content/mit_license.txt).
+
+<a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
