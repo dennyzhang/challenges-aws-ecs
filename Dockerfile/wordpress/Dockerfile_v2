@@ -19,7 +19,7 @@ ENV WEB_PORT 80
 
 USER root
 
-RUN apt-get install -y gzip tar wget && \
+RUN apt-get update -y && apt-get install -y gzip tar wget && \
     cd /tmp/ && wget -O latest.tar.gz https://wordpress.org/latest.tar.gz && \
     gzip -d latest.tar.gz && tar -xf latest.tar && \
     mkdir -p "$WORDPRESS_DIR" && cp -r wordpress/* "$WORDPRESS_DIR"/ && \
