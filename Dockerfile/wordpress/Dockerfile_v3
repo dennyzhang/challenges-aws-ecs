@@ -1,0 +1,29 @@
+########## How To Use Docker Image ###############
+##
+##  Image Name: denny/challenges-aws-ecs:latest
+##  Git link: https://github.com/DennyZhang/challenges-aws-ecs/blob/master/Dockerfile/wordpress/Dockerfile
+##  Build docker image:
+##      time docker build --no-cache -f Dockerfile_v3 -t denny/challenges-aws-ecs:wordpress_v3 --rm=true .
+##  Test image:
+##      docker run -p 8080:80 --name wordpress-test -d denny/challenges-aws-ecs:wordpress_v3
+##################################################
+# Base Docker image: https://github.com/DennyZhang/challenges-aws-ecs/blob/master/Dockerfile/wordpress/Dockerfile_v1
+
+FROM denny/challenges-aws-ecs:wordpress_v2
+
+LABEL maintainer "Denny<https://www.dennyzhang.com/contact>"
+
+ENV WORDPRESS_DIR /var/www/blog
+
+ENV WEB_PORT 80
+
+USER root
+
+WORKDIR $WORDPRESS_DIR
+
+COPY ./ads.txt $WORDPRESS_DIR/ads.txt
+
+ENTRYPOINT $WORDPRESS_DIR/docker-entrypoint.sh
+
+HEALTHCHECK --interval=2m --timeout=3s \
+            CMD $WORDPRESS_DIR/docker-healthcheck.sh || exit 1
